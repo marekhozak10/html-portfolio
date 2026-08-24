@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marek Hozák — Technical CMO, Head of Growth, AI Marketer</title>
+<meta name="description" content="Portfolio of Marek Hozák — Technical CMO, Head of Growth, and AI Marketer working at the intersection of growth strategy, AI tooling, and web engineering.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Work+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #eef1ee;
+    --surface: #ffffff;
+    --surface-2: #e4e9e3;
+    --text: #16211c;
+    --text-muted: #4b5850;
+    --accent: #2f6f5e;
+    --accent-strong: #1f4d40;
+    --accent-soft: #d9e6dd;
+    --border: #d3dad2;
+    --line: #b9c4b7;
+    --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", serif;
+    --font-body: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0f1613;
+      --surface: #161f1b;
+      --surface-2: #1c2620;
+      --text: #edf2ee;
+      --text-muted: #9baaa1;
+      --accent: #63c2a2;
+      --accent-strong: #8ad9bc;
+      --accent-soft: #1f2e27;
+      --border: #26332c;
+      --line: #33443a;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --bg: #0f1613;
+    --surface: #161f1b;
+    --surface-2: #1c2620;
+    --text: #edf2ee;
+    --text-muted: #9baaa1;
+    --accent: #63c2a2;
+    --accent-strong: #8ad9bc;
+    --accent-soft: #1f2e27;
+    --border: #26332c;
+    --line: #33443a;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  /* ---------- nav ---------- */
+  header.nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  .nav-mark {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .nav-mark .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--accent);
+    display: inline-block;
+    flex: none;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color 0.15s ease;
+  }
+  .nav-links a:hover,
+  .nav-links a:focus-visible { color: var(--accent-strong); }
+
+  .nav-cta {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    color: var(--text);
+    border: 1px solid var(--line);
+    padding: 7px 14px;
+    border-radius: 3px;
+    white-space: nowrap;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+  }
+  .nav-cta:hover, .nav-cta:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+    background: var(--accent-soft);
+  }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 96px 0 88px;
+    overflow: hidden;
+  }
+
+  .hero-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.55;
+  }
+
+  .hero-line path {
+    fill: none;
+    stroke: var(--accent);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw 2.4s cubic-bezier(0.65, 0, 0.35, 1) 0.2s forwards;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-line path { animation: none; stroke-dashoffset: 0; }
+  }
+
+  @keyframes draw {
+    to { stroke-dashoffset: 0; }
+  }
+
+  .hero-inner { position: relative; z-index: 1; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+    margin: 0 0 18px;
+  }
+
+  h1.name {
+    font-family: var(--font-display);
+    font-weight: 450;
+    font-size: clamp(48px, 8vw, 88px);
+    line-height: 1.02;
+    letter-spacing: -0.01em;
+    margin: 0 0 22px;
+    text-wrap: balance;
+    max-width: 14ch;
+  }
+
+  h1.name em {
+    font-style: italic;
+    font-weight: 450;
+    color: var(--accent-strong);
+  }
+
+  .roles {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+
+  .roles li {
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 6px 12px;
+    color: var(--text-muted);
+    background: var(--surface);
+  }
+
+  .hero-tagline {
+    font-size: 19px;
+    color: var(--text-muted);
+    max-width: 46ch;
+    margin: 0 0 40px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 3px;
+    transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: #f4faf7;
+    border: 1px solid var(--accent);
+  }
+  .btn-primary:hover, .btn-primary:focus-visible {
+    background: var(--accent-strong);
+    border-color: var(--accent-strong);
+    transform: translateY(-1px);
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover, .btn-ghost:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent-strong);
+    transform: translateY(-1px);
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 84px 0; border-top: 1px solid var(--border); }
+
+  .section-head { margin-bottom: 40px; max-width: 640px; }
+
+  h2.section-title {
+    font-family: var(--font-display);
+    font-weight: 450;
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 6px 0 0;
+    text-wrap: balance;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* about */
+  .about-body { max-width: 62ch; font-size: 17px; color: var(--text-muted); }
+  .about-body p { margin: 0 0 18px; }
+  .about-body strong { color: var(--text); font-weight: 600; }
+  .about-note {
+    margin-top: 28px;
+    padding: 14px 16px;
+    border: 1px dashed var(--line);
+    border-radius: 3px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .about-note .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); flex: none; }
+
+  /* focus grid */
+  .focus-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 760px) {
+    .focus-grid { grid-template-columns: 1fr; }
+  }
+
+  .focus-card {
+    background: var(--surface);
+    padding: 30px 26px;
+  }
+
+  .focus-card h3 {
+    font-family: var(--font-display);
+    font-weight: 450;
+    font-style: italic;
+    font-size: 21px;
+    margin: 0 0 16px;
+    color: var(--accent-strong);
+  }
+
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .tag-list li {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    color: var(--text-muted);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    padding: 5px 10px;
+  }
+
+  /* projects */
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 760px) {
+    .project-grid { grid-template-columns: 1fr; }
+  }
+
+  .project-card {
+    border: 1px dashed var(--line);
+    border-radius: 4px;
+    padding: 26px 22px 22px;
+    background: var(--surface);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-height: 190px;
+  }
+
+  .project-tag {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-strong);
+  }
+
+  .project-card h3 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 17px;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .project-card p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin: 0;
+    flex: 1;
+  }
+
+  .project-status {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .project-status .dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    border: 1px solid var(--line);
+    flex: none;
+  }
+
+  .projects-note { margin-top: 28px; font-size: 15px; color: var(--text-muted); max-width: 56ch; }
+
+  /* contact */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 720px) {
+    .contact-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .contact-body { font-size: 17px; color: var(--text-muted); max-width: 48ch; }
+
+  .contact-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+
+  .contact-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    text-decoration: none;
+    color: var(--text);
+  }
+  .contact-row:first-child { border-top: 1px solid var(--border); }
+
+  .contact-row .label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .contact-row .value {
+    font-size: 17px;
+    font-family: var(--font-display);
+    transition: color 0.15s ease;
+  }
+  .contact-row:hover .value, .contact-row:focus-visible .value { color: var(--accent-strong); }
+
+  .contact-row .arrow {
+    font-family: var(--font-mono);
+    color: var(--text-muted);
+    transition: transform 0.15s ease, color 0.15s ease;
+  }
+  .contact-row:hover .arrow, .contact-row:focus-visible .arrow {
+    transform: translateX(3px);
+    color: var(--accent-strong);
+  }
+
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 28px 0 40px;
+  }
+  .footer-inner {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-muted);
+    flex-wrap: wrap;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="nav-mark" href="#top"><span class="dot"></span>MAREK HOZÁK</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#focus">Focus</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="nav-cta" href="https://www.linkedin.com/in/marekhozak/" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" style="border-top:none; padding-top: 96px;">
+    <svg class="hero-line" viewBox="0 0 1040 480" preserveAspectRatio="none" aria-hidden="true">
+      <path d="M -20 380 L 140 380 L 180 340 L 220 400 L 260 260 L 300 260 L 340 200 L 380 200 L 420 300 L 460 300 L 500 140 L 540 140 L 580 220 L 620 90 L 660 90 L 700 180 L 740 60 L 780 60 L 820 150 L 860 40 L 1060 40" />
+    </svg>
+    <div class="wrap hero-inner">
+      <p class="eyebrow">Portfolio — work in progress</p>
+      <h1 class="name">Marek<br><em>Hozák</em></h1>
+      <ul class="roles">
+        <li>Technical CMO</li>
+        <li>Head of Growth</li>
+        <li>AI Marketer</li>
+      </ul>
+      <p class="hero-tagline">Growth strategy, AI tooling, and hands-on engineering, under one roof. I build the systems and campaigns that make marketing measurable.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/marekhozak/" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn btn-ghost" href="mailto:marek@client.io">Email me</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">About</p>
+        <h2 class="section-title">How I work</h2>
+      </div>
+      <div class="about-body reveal">
+        <p>Marek works at the intersection of <strong>marketing and engineering</strong> — leading growth strategy while staying hands-on with the AI tooling and web systems that make it scale.</p>
+        <p>He's drawn to problems that sit between disciplines: campaigns that need a technical fix, systems that need a growth lens, and the automation that connects the two.</p>
+        <div class="about-note"><span class="dot"></span>This section is a placeholder — full background and experience coming soon.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="focus">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Focus areas</p>
+        <h2 class="section-title">Where I spend my time</h2>
+      </div>
+    </div>
+    <div class="wrap reveal">
+      <div class="focus-grid">
+        <div class="focus-card">
+          <h3>Growth &amp; Marketing</h3>
+          <ul class="tag-list">
+            <li>Growth strategy</li>
+            <li>Lifecycle &amp; acquisition</li>
+            <li>Positioning</li>
+            <li>Analytics</li>
+          </ul>
+        </div>
+        <div class="focus-card">
+          <h3>AI &amp; Automation</h3>
+          <ul class="tag-list">
+            <li>AI tooling</li>
+            <li>Prompt &amp; agent design</li>
+            <li>Workflow automation</li>
+            <li>LLM integration</li>
+          </ul>
+        </div>
+        <div class="focus-card">
+          <h3>Web &amp; Product</h3>
+          <ul class="tag-list">
+            <li>Web development</li>
+            <li>Landing pages</li>
+            <li>Technical marketing</li>
+            <li>Rapid prototyping</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Selected work</p>
+        <h2 class="section-title">Projects — in progress</h2>
+      </div>
+      <div class="project-grid reveal">
+        <div class="project-card">
+          <span class="project-tag">Growth</span>
+          <h3>Case study coming soon</h3>
+          <p>A growth or acquisition project will be written up here.</p>
+          <span class="project-status"><span class="dot"></span>Placeholder</span>
+        </div>
+        <div class="project-card">
+          <span class="project-tag">AI &amp; Automation</span>
+          <h3>Case study coming soon</h3>
+          <p>An AI tooling or automation project will be written up here.</p>
+          <span class="project-status"><span class="dot"></span>Placeholder</span>
+        </div>
+        <div class="project-card">
+          <span class="project-tag">Web &amp; Product</span>
+          <h3>Case study coming soon</h3>
+          <p>A web or product build will be written up here.</p>
+          <span class="project-status"><span class="dot"></span>Placeholder</span>
+        </div>
+      </div>
+      <p class="projects-note">Real case studies are on the way. In the meantime, get in touch on LinkedIn to hear about current work.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="reveal">
+          <p class="eyebrow">Get in touch</p>
+          <h2 class="section-title">Let's talk</h2>
+          <p class="contact-body" style="margin-top:18px;">Open to conversations about growth, AI systems, and technical marketing. The fastest way to reach me is LinkedIn or email.</p>
+        </div>
+        <ul class="contact-list reveal">
+          <li>
+            <a class="contact-row" href="mailto:marek@client.io">
+              <span>
+                <span class="label">Email</span><br>
+                <span class="value">marek@client.io</span>
+              </span>
+              <span class="arrow">→</span>
+            </a>
+          </li>
+          <li>
+            <a class="contact-row" href="https://www.linkedin.com/in/marekhozak/" target="_blank" rel="noopener">
+              <span>
+                <span class="label">LinkedIn</span><br>
+                <span class="value">in/marekhozak</span>
+              </span>
+              <span class="arrow">↗</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <span>© 2026 Marek Hozák</span>
+    <span>Site in progress — content and design still evolving.</span>
+  </div>
+</footer>
+
+<script>
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          e.target.classList.add('in-view');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function (el) { io.observe(el); });
+  } else {
+    els.forEach(function (el) { el.classList.add('in-view'); });
+  }
+</script>
+</body>
+</html>
